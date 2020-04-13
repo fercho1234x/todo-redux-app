@@ -1,0 +1,9 @@
+<!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+<li [class.completed]="todo.completado" [class.editing]="editando">
+    <div class="view">
+        <input [formControl]="chkCompletado" class="toggle" type="checkbox">
+        <label (dblclick)="editar()">{{ todo.texto }}</label>
+        <button (click)="eliminar()" class="destroy"></button>
+    </div>
+    <input #inputHtml (blur)="terminarEdicion()" [formControl]="txtInput" type="text" class="edit">
+</li>
